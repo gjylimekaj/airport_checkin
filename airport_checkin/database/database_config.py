@@ -9,20 +9,16 @@ from sqlalchemy.orm import sessionmaker
 
 
 
-# DB_NAME = os.getenv("DB_NAME").replace("'", "")
-# DB_USER = os.getenv("DB_USER").replace("'", "")
-# DB_PASSWORD = os.getenv("DB_PASSWORD").replace("'", "")
-# DB_HOST = os.getenv("DB_HOST").replace("'", "")
-# DB_PORT = os.getenv("DB_PORT").replace("'", "")
+DB_NAME = os.getenv("DB_NAME").replace("'", "")
+DB_USER = os.getenv("DB_USER").replace("'", "")
+DB_PASSWORD = os.getenv("DB_PASSWORD").replace("'", "")
+DB_HOST = os.getenv("DB_HOST").replace("'", "")
+DB_PORT = os.getenv("DB_PORT").replace("'", "")
 
-DB_NAME = "gjylis_db"
-DB_USER = "gjyli"
-DB_PASSWORD = "12345678"
-DB_HOST = "139.59.156.28"
-DB_PORT = "3306"
 # Construct the DATABASE_URL for connecting to the database
-
 DATABASE_URL = (f"mysql+mysqlconnector://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}")
+
+
 
 Base = declarative_base()
 engine = create_engine(DATABASE_URL)

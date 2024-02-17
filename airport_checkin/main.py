@@ -4,13 +4,14 @@ import asyncio
 import datetime
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from .passport_status.handler import passport_status_app
 
 
 # Initializing main app
 app = FastAPI(
-    title="Vloris backend API",
+    title="Airport Checkin",
     description="""
-    The API backend is used for Vlori platform.
+    The API backend is used for airport platform.
     More descriptions coming soon.
     """,
     version="1.0.0",
@@ -28,7 +29,7 @@ app.add_middleware(
 )
 
 # Include apps
-
+app.include_router(passport_status_app, prefix="/passport_status")
 
 
 if __name__ == "__main__":
@@ -39,6 +40,10 @@ if __name__ == "__main__":
     except IndexError:
         print("No command line args found.")
         print("Command to pass: 1. serve: to start the server")
+
+
 print("hello")
 print("i just started to create a small project for airport checkin system")
 print("hope youll like it :)")
+print("im going to create some api calls")
+print("hehehe ")

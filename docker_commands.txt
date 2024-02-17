@@ -4,7 +4,7 @@ Spin up the project med Docker:
 
 //this runs the image in container
 2. docker run -d -e PYTHONUNBUFFERED=1 -v ~/airport_checkin:/airport_checkin --env-file env_vars.env --name run_airport_checkin -p 5080:80 fastapiserver_restapi
-
+//or docker run -d -e PYTHONUNBUFFERED=1 -v ~/airport_checkin:/airport_checkin --env-file env_vars.env --name run_airport_checkin -p 5081:80 fastapiserver_restapi
 3. docker logs --tail 100 -f run_airport_checkin
 
 
