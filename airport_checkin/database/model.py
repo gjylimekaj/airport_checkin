@@ -24,7 +24,7 @@ metadata = Base.metadata
 class PassportUsers(Base):
     __tablename__ = "passport_users"
 
-    passport_ID =  Column(VARCHAR(255), primary_key=True, unique=True, autoincrement=True)
+    passport_ID =  Column(VARCHAR(255), primary_key=True, unique=True, default=str(uuid.uuid4()))
     first_name = Column(VARCHAR(255),nullable=False)
     last_name = Column(VARCHAR(255),nullable=False)
     country = Column(VARCHAR(255), unique=True)
